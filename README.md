@@ -95,6 +95,8 @@ pytest -v
 
 The tests use a separate database, `sap_mes_validation_test`, and rebuild it on every run.
 
+**Windows: "running scripts is disabled"** when activating the virtual environment. Either run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, or skip activation and call `.\.venv\Scripts\python.exe -m sapmes.run_validation` directly. If you run plain `python` without activating, you'll get `No module named ...` errors.
+
 **Windows note:** if the `psycopg-binary` DLL is blocked (for example by Smart App Control), add `PSYCOPG_IMPL=python` to `.env`. `db.py` then uses `libpq.dll` from the local PostgreSQL install.
 
 ## Power BI dashboard
