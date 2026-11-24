@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "0b017b69b50d4a33b7d1",
+  "position": {
+    "x": 450,
+    "y": 110,
+    "z": 2,
+    "height": 160,
+    "width": 400,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "Interface Errors"
+                }
+              },
+              "queryRef": "InterfaceHealth.Interface Errors",
+              "nativeQueryRef": "Interface Errors"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,115 @@
+table OEE
+	lineageTag: 51d0ffa3-109e-431f-ae41-a233cbc553e8
+
+	measure 'OEE %' = DIVIDE ( SUMX ( OEE, OEE[oee] * ( OEE[good_qty] + OEE[scrap_qty] ) ), SUM ( OEE[good_qty] ) + SUM ( OEE[scrap_qty] ) )
+		formatString: 0.0%
+		lineageTag: 5cd2ee24-815b-4785-8070-57315d164953
+
+	measure 'Availability %' = AVERAGE ( OEE[availability] )
+		formatString: 0.0%
+		lineageTag: 8b88bf86-31ee-4895-b81f-89464e0cec83
+
+	measure 'Performance %' = AVERAGE ( OEE[performance] )
+		formatString: 0.0%
+		lineageTag: 22b79f31-d8b9-4c40-8eaa-291cb8ebb3dc
+
+	measure 'Quality %' = AVERAGE ( OEE[quality] )
+		formatString: 0.0%
+		lineageTag: 99e6822c-6011-4556-88e6-91414a5a3503
+
+	column line
+		dataType: string
+		lineageTag: 64770b8d-5437-4a65-a01e-c668e43bf2af
+		summarizeBy: none
+		sourceColumn: line
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7e40090a-9af4-4124-bba1-dffad99efc9b
+		summarizeBy: none
+		sourceColumn: week_start
+
+		variation Variation
+			isDefault
+			relationship: 2c107581-aa52-4dad-a8a1-c7f420ba390a
+			defaultHierarchy: LocalDateTable_82cc5c87-5f01-4e19-b7e9-99bda5a58d13.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column availability
+		dataType: double
+		lineageTag: 3434849a-1d10-4066-9aef-c9876aec4df6
+		summarizeBy: sum
+		sourceColumn: availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column performance
+		dataType: double
+		lineageTag: 433dc036-50cc-47bb-a9d3-23411f8e67e8
+		summarizeBy: sum
+		sourceColumn: performance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quality
+		dataType: double
+		lineageTag: 4b242c2d-fbd4-4ff5-ac60-4cbd523580ea
+		summarizeBy: sum
+		sourceColumn: quality
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column oee
+		dataType: double
+		lineageTag: ee0d3152-05b2-494a-841b-d214a901c461
+		summarizeBy: sum
+		sourceColumn: oee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column good_qty
+		dataType: double
+		lineageTag: fb720870-1c33-44ef-bdb5-de7e850fb19c
+		summarizeBy: sum
+		sourceColumn: good_qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column scrap_qty
+		dataType: double
+		lineageTag: f05cfaf5-4520-4c80-801f-f15736d87890
+		summarizeBy: sum
+		sourceColumn: scrap_qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition OEE = m
+		mode: import
+		source =
+				let
+				    Source = let Source = Csv.Document(File.Contents("C:\GitHub\SAP-MES-Integration-Validation-\exports\oee_weekly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Promoted, {{"line", type text}, {"week_start", type date}, {"availability", type number}, {"performance", type number}, {"quality", type number}, {"oee", type number}, {"good_qty", type number}, {"scrap_qty", type number}}, "en-US") in Typed
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

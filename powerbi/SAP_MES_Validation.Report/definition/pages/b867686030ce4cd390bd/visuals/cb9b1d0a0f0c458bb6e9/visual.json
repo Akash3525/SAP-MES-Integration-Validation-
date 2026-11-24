@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "cb9b1d0a0f0c458bb6e9",
+  "position": {
+    "x": 495,
+    "y": 110,
+    "z": 2,
+    "height": 160,
+    "width": 445,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OEE"
+                    }
+                  },
+                  "Property": "Availability %"
+                }
+              },
+              "queryRef": "OEE.Availability %",
+              "nativeQueryRef": "Availability %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

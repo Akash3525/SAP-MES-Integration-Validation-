@@ -1,0 +1,39 @@
+table Findings
+	lineageTag: 7d976465-437d-4f21-adca-0ee618a40151
+
+	measure 'Orders With Findings' = DISTINCTCOUNT ( Findings[order_no] )
+		formatString: 0
+		lineageTag: e638e30a-a625-4fff-9de6-fb97595d8cd9
+
+	column check_name
+		dataType: string
+		lineageTag: 69716379-2a2c-44bb-af38-931070cfd722
+		summarizeBy: none
+		sourceColumn: check_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_no
+		dataType: string
+		lineageTag: 31bfe5c7-9528-4a75-9de3-e07f732b317b
+		summarizeBy: none
+		sourceColumn: order_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column detail
+		dataType: string
+		lineageTag: 6cc0f74c-b073-4dce-998b-f8a7a692768b
+		summarizeBy: none
+		sourceColumn: detail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Findings = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\GitHub\SAP-MES-Integration-Validation-\exports\validation_findings.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Promoted, {{"check_name", type text}, {"order_no", type text}, {"detail", type text}}, "en-US") in Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

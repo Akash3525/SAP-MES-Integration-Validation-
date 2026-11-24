@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "ed43af057f0c43caa663",
+  "position": {
+    "x": 470,
+    "y": 110,
+    "z": 2,
+    "height": 160,
+    "width": 420,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Findings"
+                    }
+                  },
+                  "Property": "Orders With Findings"
+                }
+              },
+              "queryRef": "Findings.Orders With Findings",
+              "nativeQueryRef": "Orders With Findings"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

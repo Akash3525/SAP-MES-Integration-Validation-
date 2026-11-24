@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "5d60a21ff23c41919c5c",
+  "position": {
+    "x": 1290,
+    "y": 110,
+    "z": 4,
+    "height": 160,
+    "width": 600,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "direction"
+                }
+              },
+              "queryRef": "InterfaceHealth.direction",
+              "nativeQueryRef": "direction",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Direction'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

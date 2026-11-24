@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "4f1e39bd3ba042bf9fd1",
+  "position": {
+    "x": 870,
+    "y": 110,
+    "z": 3,
+    "height": 160,
+    "width": 400,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "Interface Success Rate"
+                }
+              },
+              "queryRef": "InterfaceHealth.Interface Success Rate",
+              "nativeQueryRef": "Interface Success Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

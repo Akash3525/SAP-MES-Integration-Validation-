@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "9cdd034afa1749e08402",
+  "position": {
+    "x": 30,
+    "y": 290,
+    "z": 5,
+    "height": 760,
+    "width": 920,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "week_start"
+                }
+              },
+              "queryRef": "InterfaceHealth.week_start",
+              "nativeQueryRef": "week_start",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "Interface Success Rate"
+                }
+              },
+              "queryRef": "InterfaceHealth.Interface Success Rate",
+              "nativeQueryRef": "Interface Success Rate"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InterfaceHealth"
+                    }
+                  },
+                  "Property": "msg_type"
+                }
+              },
+              "queryRef": "InterfaceHealth.msg_type",
+              "nativeQueryRef": "msg_type"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Success rate by week and message type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

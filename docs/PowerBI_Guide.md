@@ -1,7 +1,7 @@
 # Power BI Guide
 
-How to build the dashboard from the four CSV files in `exports/`.
-This repository has no `.pbix` file. Build it in Power BI Desktop with these steps, then add screenshots to the README.
+The finished report is `powerbi/SAP_MES_Validation.pbix`. It uses the tables, measures and layout described below.
+Follow these steps to rebuild it, or to build your own version from the four CSV files in `exports/`.
 
 ## 1. Load the data
 

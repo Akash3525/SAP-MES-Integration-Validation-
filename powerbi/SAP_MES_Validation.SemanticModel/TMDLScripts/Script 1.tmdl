@@ -1,0 +1,36 @@
+createOrReplace
+
+	ref table Summary
+
+		measure 'Total Findings' = SUM ( Summary[findings] )
+			formatString: 0
+
+	ref table Findings
+
+		measure 'Orders With Findings' = DISTINCTCOUNT ( Findings[order_no] )
+			formatString: 0
+
+	ref table InterfaceHealth
+
+		measure 'Message Attempts' = SUM ( InterfaceHealth[attempts] )
+			formatString: #,0
+
+		measure 'Interface Errors' = SUM ( InterfaceHealth[errors] )
+			formatString: #,0
+
+		measure 'Interface Success Rate' = DIVIDE ( SUM ( InterfaceHealth[processed] ), SUM ( InterfaceHealth[attempts] ) )
+			formatString: 0.0%
+
+	ref table OEE
+
+		measure 'OEE %' = DIVIDE ( SUMX ( OEE, OEE[oee] * ( OEE[good_qty] + OEE[scrap_qty] ) ), SUM ( OEE[good_qty] ) + SUM ( OEE[scrap_qty] ) )
+			formatString: 0.0%
+
+		measure 'Availability %' = AVERAGE ( OEE[availability] )
+			formatString: 0.0%
+
+		measure 'Performance %' = AVERAGE ( OEE[performance] )
+			formatString: 0.0%
+
+		measure 'Quality %' = AVERAGE ( OEE[quality] )
+			formatString: 0.0%

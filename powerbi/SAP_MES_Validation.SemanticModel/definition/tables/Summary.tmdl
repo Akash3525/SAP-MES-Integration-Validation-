@@ -1,0 +1,32 @@
+table Summary
+	lineageTag: 513194cc-dee2-430b-80d7-2f42b4461735
+
+	measure 'Total Findings' = SUM ( Summary[findings] )
+		formatString: 0
+		lineageTag: 14449b37-9b1b-4690-8a17-1bb78e3eb40f
+
+	column check_name
+		dataType: string
+		lineageTag: d9c83f6e-34e1-4599-a8f8-72d7a8734380
+		summarizeBy: none
+		sourceColumn: check_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column findings
+		dataType: int64
+		formatString: 0
+		lineageTag: 34c0a592-88cf-454a-9adb-f8edb1226a92
+		summarizeBy: none
+		sourceColumn: findings
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Summary = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\GitHub\SAP-MES-Integration-Validation-\exports\validation_summary.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Promoted, {{"check_name", type text}, {"findings", Int64.Type}}, "en-US") in Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

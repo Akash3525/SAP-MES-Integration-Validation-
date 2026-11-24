@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Summary","Findings","OEE","InterfaceHealth"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+ref table Summary
+ref table Findings
+ref table OEE
+ref table DateTableTemplate_99de20a5-79bb-4cc7-828f-8f854d32a10f
+ref table LocalDateTable_82cc5c87-5f01-4e19-b7e9-99bda5a58d13
+ref table InterfaceHealth
+ref table LocalDateTable_cd6ec581-1886-4a4b-bda4-f0dd21c9e976
+
+ref cultureInfo en-US
+

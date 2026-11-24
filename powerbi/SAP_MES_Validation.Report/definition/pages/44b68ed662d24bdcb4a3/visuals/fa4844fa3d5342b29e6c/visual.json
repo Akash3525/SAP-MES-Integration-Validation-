@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "fa4844fa3d5342b29e6c",
+  "position": {
+    "x": 910,
+    "y": 110,
+    "z": 3,
+    "height": 160,
+    "width": 980,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Summary"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "Summary.check_name",
+              "nativeQueryRef": "check_name",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Check'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

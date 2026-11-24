@@ -1,0 +1,14 @@
+relationship 2c107581-aa52-4dad-a8a1-c7f420ba390a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OEE.week_start
+	toColumn: LocalDateTable_82cc5c87-5f01-4e19-b7e9-99bda5a58d13.Date
+
+relationship d2c9509f-75d0-4273-9e9b-9ac40b0866ae
+	joinOnDateBehavior: datePartOnly
+	fromColumn: InterfaceHealth.week_start
+	toColumn: LocalDateTable_cd6ec581-1886-4a4b-bda4-f0dd21c9e976.Date
+
+relationship AutoDetected_a6b7c1a9-fcb6-4769-95ef-e76703b8bd4a
+	fromColumn: Findings.check_name
+	toColumn: Summary.check_name
+

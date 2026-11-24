@@ -73,7 +73,8 @@ sapmes/
 tests/
   test_validation.py        12 tests
 exports/                    CSVs for Power BI
-docs/                       Troubleshooting playbook, Power BI guide
+powerbi/                    Power BI report (.pbix) and Power BI Project (.pbip)
+docs/                       Troubleshooting playbook, Power BI guide, screenshots
 ```
 
 ## Run it
@@ -96,9 +97,20 @@ The tests use a separate database, `sap_mes_validation_test`, and rebuild it on 
 
 **Windows note:** if the `psycopg-binary` DLL is blocked (for example by Smart App Control), add `PSYCOPG_IMPL=python` to `.env`. `db.py` then uses `libpq.dll` from the local PostgreSQL install.
 
-## Power BI
+## Power BI dashboard
 
-The `.pbix` file is not included. Load the four CSVs in `exports/`, or connect directly to the views, using the [Power BI Guide](docs/PowerBI_Guide.md). It describes a three-page layout (data quality, interface health, OEE) and gives the DAX measures.
+`powerbi/SAP_MES_Validation.pbix` is a three-page report built on the four CSVs in `exports/`. The same report is also saved as a Power BI Project (`SAP_MES_Validation.pbip`), whose TMDL and JSON files are readable in a git diff.
+
+**Data Quality**: findings per check, with a drill-down table
+![Data Quality page](docs/img/powerbi_data_quality.jpg)
+
+**Interface Health**: weekly success rate per message type, and processed, error and pending attempts
+![Interface Health page](docs/img/powerbi_interface_health.jpg)
+
+**OEE**: availability × performance × quality by line and week
+![OEE page](docs/img/powerbi_oee.jpg)
+
+The data source paths point to `C:\GitHub\SAP-MES-Integration-Validation-\exports\`. If you clone the repository somewhere else, change them in **Transform data → Data source settings → Change Source**, then click **Refresh**. The measures are described in the [Power BI Guide](docs/PowerBI_Guide.md).
 
 ## Skills demonstrated
 
