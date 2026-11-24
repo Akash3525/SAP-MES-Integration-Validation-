@@ -2,6 +2,14 @@
 
 SQL-based reconciliation of simulated SAP PP and MES data: 7 validation checks, interface exception tracking and OEE reporting, with automated tests. Fictional data.
 
+
+
+https://github.com/user-attachments/assets/492277e1-26a5-4f08-a4fe-9cacf599f4fe
+
+
+
+
+
 > **Scope note.** The data is simulated, and the table names are simplified. They are not real SAP tables such as AUFK, AFRU or RESB, and there is no live SAP or MES connection. The project shows the reconciliation logic and the testing approach a manufacturing IT or MES engineer would use.
 
 ## What it shows
