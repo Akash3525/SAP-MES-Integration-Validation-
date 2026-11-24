@@ -42,7 +42,7 @@ PLANT = "1000"
 
 TRANSIENT_ERRORS = [
     "Lock on order by user BATCHJOB, retry scheduled",
-    "Connection timeout to MES endpoint after 30 s",
+    "Connection timeout to receiving system after 30 s",
     "HTTP 503 Service Unavailable",
 ]
 FATAL_ERRORS = [
