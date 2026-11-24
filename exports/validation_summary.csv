@@ -1,0 +1,8 @@
+check_name,findings
+missing_in_mes,8
+no_sap_confirmation,9
+duplicate_mes,6
+qty_mismatch,10
+consumption_mismatch,8
+status_mismatch,7
+stuck_messages,9

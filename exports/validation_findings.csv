@@ -1,0 +1,58 @@
+check_name,order_no,detail
+consumption_mismatch,1000000106,"EXC-300010 consumed 30.350, expected 36.077 (-15.9%)"
+consumption_mismatch,1000000139,"EXC-300020 consumed 8.355, expected 7.362 (13.5%)"
+consumption_mismatch,1000000194,"API-200010 consumed 33.746, expected 39.099 (-13.7%)"
+consumption_mismatch,1000000226,"EXC-300010 consumed 15.688, expected 13.788 (13.8%)"
+consumption_mismatch,1000000227,"EXC-300020 consumed 1.100, expected 1.310 (-16.0%)"
+consumption_mismatch,1000000328,"EXC-300010 consumed 16.596, expected 14.511 (14.4%)"
+consumption_mismatch,1000000337,"API-200010 consumed 42.183, expected 49.376 (-14.6%)"
+consumption_mismatch,1000000356,"API-200040 consumed 35.276, expected 30.948 (14.0%)"
+duplicate_mes,1000000158,"2 MES work orders (ids 154, 155)"
+duplicate_mes,1000000242,"2 MES work orders (ids 237, 238)"
+duplicate_mes,1000000251,"2 MES work orders (ids 247, 248)"
+duplicate_mes,1000000284,"2 MES work orders (ids 282, 283)"
+duplicate_mes,1000000364,"2 MES work orders (ids 361, 362)"
+duplicate_mes,1000000381,"2 MES work orders (ids 378, 379)"
+missing_in_mes,1000000068,"Created 2026-10-03 12:08, status REL, not in MES after 24 h"
+missing_in_mes,1000000077,"Created 2026-10-04 08:36, status REL, not in MES after 24 h"
+missing_in_mes,1000000107,"Created 2026-10-09 20:20, status REL, not in MES after 24 h"
+missing_in_mes,1000000129,"Created 2026-10-13 19:12, status REL, not in MES after 24 h"
+missing_in_mes,1000000140,"Created 2026-10-15 08:01, status REL, not in MES after 24 h"
+missing_in_mes,1000000202,"Created 2026-10-24 08:38, status REL, not in MES after 24 h"
+missing_in_mes,1000000297,"Created 2026-11-06 21:57, status REL, not in MES after 24 h"
+missing_in_mes,1000000374,"Created 2026-11-17 03:12, status REL, not in MES after 24 h"
+no_sap_confirmation,1000000038,"MES complete since 2026-09-30 05:31, no SAP confirmation"
+no_sap_confirmation,1000000045,"MES complete since 2026-10-01 18:18, no SAP confirmation"
+no_sap_confirmation,1000000091,"MES complete since 2026-10-07 16:43, no SAP confirmation"
+no_sap_confirmation,1000000236,"MES complete since 2026-10-30 15:23, no SAP confirmation"
+no_sap_confirmation,1000000254,"MES complete since 2026-11-03 16:45, no SAP confirmation"
+no_sap_confirmation,1000000309,"MES complete since 2026-11-08 20:39, no SAP confirmation"
+no_sap_confirmation,1000000330,"MES complete since 2026-11-10 22:28, no SAP confirmation"
+no_sap_confirmation,1000000339,"MES complete since 2026-11-13 05:50, no SAP confirmation"
+no_sap_confirmation,1000000355,"MES complete since 2026-11-15 16:39, no SAP confirmation"
+qty_mismatch,1000000061,MES good/scrap 119981.000/1713.000 vs SAP 116651.000/1713.000
+qty_mismatch,1000000063,MES good/scrap 235936.000/539.000 vs SAP 228893.000/539.000
+qty_mismatch,1000000084,MES good/scrap 94441.000/582.000 vs SAP 92395.000/582.000
+qty_mismatch,1000000087,MES good/scrap 208544.000/2182.000 vs SAP 214064.000/2182.000
+qty_mismatch,1000000111,MES good/scrap 70009.000/367.000 vs SAP 72545.000/367.000
+qty_mismatch,1000000123,MES good/scrap 150303.000/1969.000 vs SAP 148667.000/1969.000
+qty_mismatch,1000000135,MES good/scrap 225094.000/3890.000 vs SAP 220203.000/3890.000
+qty_mismatch,1000000196,MES good/scrap 193794.000/3419.000 vs SAP 202204.000/3419.000
+qty_mismatch,1000000208,MES good/scrap 208197.000/3664.000 vs SAP 214226.000/3664.000
+qty_mismatch,1000000276,MES good/scrap 240620.000/3363.000 vs SAP 233202.000/3363.000
+status_mismatch,1000000028,SAP CNF vs MES IN_PROGRESS
+status_mismatch,1000000097,SAP REL vs MES COMPLETE
+status_mismatch,1000000103,SAP CNF vs MES IN_PROGRESS
+status_mismatch,1000000124,SAP CNF vs MES IN_PROGRESS
+status_mismatch,1000000132,SAP REL vs MES COMPLETE
+status_mismatch,1000000183,SAP CNF vs MES IN_PROGRESS
+status_mismatch,1000000244,SAP REL vs MES COMPLETE
+stuck_messages,1000000011,"MBGMCR MES_TO_SAP ERROR, retries 3, last attempt 2026-09-27 16:46: Order is locked for confirmation (status TECO)"
+stuck_messages,1000000078,"MBGMCR MES_TO_SAP ERROR, retries 3, last attempt 2026-10-05 12:03: Deficit of unrestricted-use stock for component"
+stuck_messages,1000000086,"MBGMCR MES_TO_SAP PENDING, retries 0, last attempt 2026-10-11 07:05"
+stuck_messages,1000000110,"MBGMCR MES_TO_SAP ERROR, retries 3, last attempt 2026-10-11 03:17: Material master not extended to plant 1000"
+stuck_messages,1000000156,"MBGMCR MES_TO_SAP PENDING, retries 0, last attempt 2026-10-30 10:03"
+stuck_messages,1000000177,"MBGMCR MES_TO_SAP PENDING, retries 0, last attempt 2026-11-02 03:56"
+stuck_messages,1000000222,"MBGMCR MES_TO_SAP ERROR, retries 3, last attempt 2026-10-28 15:11: Material master not extended to plant 1000"
+stuck_messages,1000000264,"MBGMCR MES_TO_SAP PENDING, retries 0, last attempt 2026-11-16 16:13"
+stuck_messages,1000000279,"MBGMCR MES_TO_SAP PENDING, retries 0, last attempt 2026-11-20 09:59"
